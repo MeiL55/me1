@@ -1,0 +1,246 @@
+/* Google Fonts - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body {
+  min-height: 100vh; /* Ensures full height of the viewport */
+  display: flex;
+  flex-direction: column; /* Stacks components vertically */
+  align-items: center; /* Centers components horizontally */
+  justify-content: flex-start; /* Align components to the top */
+  background-color: #ffffff; /* Background color */
+  padding: 50px;
+  gap: 50px; /* Vertical spacing between child components */
+}
+
+/* Profile Section (pf) */
+.pf {
+  display: flex; /* Horizontal layout for image and scrollable text */
+  flex-direction: row; /* Ensures horizontal alignment */
+  align-items: center; /* Vertically centers image and scrollable text */
+  justify-content: center; /* Centers the content inside the container */
+  gap: 30px; /* Horizontal space between the image and text */
+  width: 80%; /* Responsive width for the container */
+  max-width: 1200px; /* Restricts the max size of the section */
+  margin-top: 80px;
+  margin-bottom: 20px; /* Space below the profile section */
+}
+
+/* Profile Image Styling */
+.pfp-img {
+  width: 400px; /* Image width */
+  height: 300px; /* Image height */
+  border-radius: 15px; /* Rounded corners for the image */
+  object-fit: cover; /* Ensures the image fits within the given dimensions */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for the image */
+}
+
+/* Scrollable Text Styling */
+.scrollable {
+  flex: 1; /* Takes available width */
+  height: 300px; /* Restricts the height */
+  width: 500px;
+  padding: 15px; /* Internal padding for the text */
+  overflow-y: scroll; /* Enables vertical scrolling */
+  border: 1px solid #f1ebe1; /* Border for the container */
+  background-color: #f1ebe1; /* Background color for the container */
+  border-radius: 10px; /* Rounded corners for the scrollable container */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Customize the scrollbar for the scrollable section */
+.scrollable::-webkit-scrollbar {
+  width: 16px; /* Wider scrollbar for better usability */
+}
+
+.scrollable::-webkit-scrollbar-track {
+  background: #c0cfb2; /* Background of the scrollbar track */
+  border-radius: 10px;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+  background: #8ba888; /* Thumb (scroll handle) background color */
+  border-radius: 10px;
+}
+
+.scrollable::-webkit-scrollbar-thumb:hover {
+  background: #44624a; /* Thumb color on hover */
+}
+
+.top-bar {
+  position: fixed; /* Keeps the bar in place on scroll */
+  top: 0;
+  left: 0;
+  height: 60px;
+  width: 100%; /* Spans the full width of the page */
+  background-color: #44624a; /* Light background color */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+  z-index: 1000; /* Ensures the bar stays above all content */
+  padding: 10px 20px; /* Adds padding inside the bar */
+  display: flex;
+  justify-content: space-between; /* Distributes items with space between */
+  align-items: center; /* Aligns items vertically */
+}
+
+.top-bar .menu {
+  display: flex;
+  gap: 20px; /* Space between menu items */
+}
+.top-bar .menu a:hover {
+  color: #c0cfb2; /* Highlight on hover */
+}
+.top-bar a {
+  text-decoration: none;
+  color: #f1ebe1; /* Menu item text color */
+  font-weight: bold;
+  font-size: 20px;
+}
+.slide-container {
+  display: flex;
+  margin-top: 0; /* Optional: Ensure no extra top margin is added */
+  max-width: 1400px;
+  width: 100%;
+  padding: 40px 0;
+}
+
+.slide-content {
+  margin: 0 40px;
+  overflow: hidden;
+  border-radius: 25px;
+}
+
+.card {
+  border-radius: 25px;
+  background-color: #f1ebe1;
+}
+
+.image-content,
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 14px;
+}
+
+.image-content {
+  position: relative;
+  row-gap: 5px;
+  padding: 25px 0;
+}
+
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #8ba888;
+  border-radius: 25px 25px 0 25px;
+}
+
+.overlay::before,
+.overlay::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  height: 40px;
+  width: 40px;
+  background-color: #8ba888;
+}
+
+.overlay::after {
+  border-radius: 0 25px 0 0;
+  background-color: #f1ebe1;
+}
+
+.card-image {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background: #f1ebe1;
+  padding: 3px;
+}
+
+.card-image .card-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #8ba888;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+}
+
+.description {
+  font-size: 14px;
+  color: #707070;
+  text-align: center;
+}
+
+.button {
+  border: none;
+  font-size: 16px;
+  color: #FFF;
+  padding: 8px 16px;
+  background-color: #8ba888;
+  border-radius: 6px;
+  margin: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background: #44624a;
+}
+
+.swiper-navBtn {
+  color: #44624a;
+  transition: color 0.3s ease;
+}
+
+.swiper-navBtn:hover {
+  color: #44624a;
+}
+
+.swiper-navBtn::before,
+.swiper-navBtn::after {
+  font-size: 35px;
+}
+
+.swiper-button-next {
+  right: 0;
+}
+
+.swiper-button-prev {
+  left: 0;
+}
+
+.swiper-pagination-bullet {
+  background-color: #c0cfb2;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #44624a;
+}
+
+@media screen and (max-width: 768px) {
+  .slide-content {
+    margin: 0 10px;
+  }
+
+  .swiper-navBtn {
+    display: none;
+  }
+}
