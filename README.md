@@ -1,2 +1,5 @@
 # me1
-very personal website
+Mei Li's **very personal website**.
+Project & Research website is still ongoing.
+
+
