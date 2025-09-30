@@ -1,129 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to my world</title>
-
+  <title>Mei Li - Portfolio</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-
 </head>
-
 <body>
+  <!-- Navigation Bar -->
   <div class="top-bar">
+    <div class="logo">ML</div>
     <div class="menu">
-      <a href="cv.html">Resume</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="files/cv_master.pdf" target="_blank">Resume</a>
       <a href="contact.html">Contact</a>
     </div>
   </div>
-  <div class="pf">
-    <img src="images/pfphome.jpg" alt="" class="pfp-img">
-    <div class="scrollable">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-      Vivamus in nisl et sapien laoreet volutpat. Curabitur sit amet metus non est consequat
-      aliquet. Integer a mi id metus pulvinar gravida. <br><br>
-      
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-      Vivamus in nisl et sapien laoreet volutpat. Curabitur sit amet metus non est consequat
-      aliquet. Integer a mi id metus pulvinar gravida. <br><br>
-      
-      More lines for testing scrolling...
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-      Vivamus in nisl et sapien laoreet volutpat. Curabitur sit amet metus non est consequat
-      aliquet. Integer a mi id metus pulvinar gravida. <br><br>
-  
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-      Vivamus in nisl et sapien laoreet volutpat. Curabitur sit amet metus non est consequat
-      aliquet. Integer a mi id metus pulvinar gravida. <br><br>
-  
-      More lines for testing scrolling...
-    </div>
-  </div>
-  
-  <div class="slide-container swiper">
-    <div class="slide-content">
-      <div class="card-wrapper swiper-wrapper">
-        <div class="card swiper-slide">
-          <div class="image-content">
-            <span class="overlay"></span>
 
-            <div class="card-image">
-              <img src="images/pfp.jpeg" alt="" class="card-img">
-            </div>
-          </div>
-
-          <div class="card-content">
-            <h2 class="name">My LinkedIn</h2>
-            <p class="description">Check my linkedIn profile.</p>
-            <button class="button" onclick="window.open('https://www.linkedin.com/in/mei-li-ba800b290/', '_blank')">View More</button>
-          </div>
-        </div>
-        <div class="card swiper-slide">
-          <div class="image-content">
-            <span class="overlay"></span>
-
-            <div class="card-image">
-              <img src="images/gitpfp.jpg" alt="" class="card-img">
-            </div>
-          </div>
-
-          <div class="card-content">
-            <h2 class="name">My Github</h2>
-            <p class="description">Do you want to see my github repos?</p>
-
-            <button class="button" onclick="window.open('https://github.com/MeiL55', '_blank')">View More</button>
-          </div>
-        </div>
-        <div class="card swiper-slide">
-          <div class="image-content">
-            <span class="overlay"></span>
-
-            <div class="card-image">
-              <img src="images/kitty1.jpg" alt="" class="card-img">
-            </div>
-          </div>
-
-          <div class="card-content">
-            <h2 class="name">Mimi</h2>
-            <p class="description">My beloved cat, the perfect creation.</p>
-
-            <button class="button" onclick="window.location.href='cat.html';">View More</button>
-          </div>
-        </div>
-        <div class="card swiper-slide">
-          <div class="image-content">
-            <span class="overlay"></span>
-
-            <div class="card-image">
-              <img src="images/foodpfp.jpg" alt="" class="card-img">
-            </div>
-          </div>
-
-          <div class="card-content">
-            <h2 class="name">FOOD</h2>
-            <p class="description">Gallery of my cookings & food.</p>
-
-            <button class="button" onclick="window.location.href='food.html';">View More</button>
-          </div>
-        </div>
+  <!-- Profile Section -->
+  <div class="profile-section" id="about">
+    <div class="profile-container">
+      <div class="profile-image">
+        <img src="images/pfphome.jpg" alt="Mei Li">
+      </div>
+      <div class="profile-content">
+        <h1>Hi, I'm Mei Li</h1>
+        <p class="subtitle">Computer Science Junior @ Georgia Tech</p>
+        <p>
+          I'm a third-year Computer Science student at Georgia Tech with experiences spanning social computing, 
+          database research, full-stack development, and data pipelining. I'm passionate about creating technology 
+          solutions that enhance collaboration and building data systems that people can rely on. In my free time, 
+          I love cooking and going to the gym for a short run.
+        </p>
       </div>
     </div>
-
-    <div class="swiper-button-next swiper-navBtn"></div>
-    <div class="swiper-button-prev swiper-navBtn"></div>
-    <div class="swiper-pagination"></div>
   </div>
 
+  <!-- Projects Section -->
+  <div class="section-title" id="projects">
+    <h2>Featured Projects</h2>
+  </div>
+
+  <div class="slide-container">
+    <div class="swiper slide-content">
+      <div class="swiper-wrapper">
+        
+        <!-- Project 1: HR Automation -->
+        <div class="swiper-slide">
+          <div class="card">
+            <div class="image-content">
+              <div class="card-image">
+                <img src="images/project1.jpg" alt="">
+              </div>
+            </div>
+            <div class="card-content">
+              <h2 class="name">Teens 4 Teens Application Tracking System</h2>
+              <div class="tech-stack">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Flask/Python</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">Celery&Redis</span>
+                <span class="tech-tag">AWS S3</span>
+              </div>
+              <p class="description">Intern Project -- designed and built an ATS for a non-profit. Enabled Role-Based Authentication system to enable applicants to submit their application and HRs to promote process in a few clicks. Automated resume screening and email notifications.</p>
+              <button class="button" onclick="window.open('https://apply.teens4teens.net', '_blank')">View Project</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Chatbot Project -->
+        <div class="swiper-slide">
+          <div class="card">
+            <div class="image-content">
+              <div class="card-image">
+                <img src="images/project2.jpg" alt="">
+              </div>
+            </div>
+            <div class="card-content">
+              <h2 class="name">Peer Support Chatbot</h2>
+              <div class="tech-stack">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">Flask/Python</span>
+                <span class="tech-tag">OpenAI API</span>
+                <span class="tech-tag">Azure</span>
+              </div>
+              <p class="description">A research-driven chatbot platform developed at Georgia Tech's SocWeb Lab that enhances user engagement through personalized AI interactions. Features dark mode, animated transitions, goal selection interfaces, and timing-based quality control that flags low-effort responses. Includes RESTful APIs that pass survey and demographic data into LLM algorithms, achieving a 23% increase in user engagement.</p>
+              <button class="button" onclick="window.open('https://young-adult-support-bot.vercel.app/', '_blank')">View Project</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Youtube Data Pipeline -->
+        <div class="swiper-slide">
+          <div class="card">
+            <div class="image-content">
+              <div class="card-image">
+                <img src="images/project3.jpg" alt="Data Pipeline">
+              </div>
+            </div>
+            <div class="card-content">
+              <h2 class="name">Automated Data Pipeline</h2>
+              <div class="tech-stack">
+                <span class="tech-tag">Apache Airflow</span>
+                <span class="tech-tag">AWS</span>
+                <span class="tech-tag">Python</span>
+              </div>
+              <p class="description">A comprehensive data science project supporting CHI 2026 paper on AI discourse in public health. Collected and indexed 50,000+ video records and built an automated transcription pipeline processing 1,000+ hours of content. Overcame technical challenges including silent tracks, encoding issues, and API rate limits to create a foundational dataset for analyzing public health narratives on social media.</p>
+              <button class="button" onclick="window.open('files/paper.pdf')">View Paper</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: GameFest -->
+        <div class="swiper-slide">
+          <div class="card">
+            <div class="image-content">
+              <div class="card-image">
+                <img src="images/project4.jpg" alt="">
+              </div>
+            </div>
+            <div class="card-content">
+              <h2 class="name">GameFest hosting website</h2>
+              <div class="tech-stack">
+                <span class="tech-tag">React.js</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Express</span>
+                <span class="tech-tag">MongoDB</span>
+              </div>
+              <p class="description">An interactive eSports tournament platform serving 100+ users with 2,000 monthly views. Enables team formation, match participation, live bracket visualization, and gameplay streaming. Features RESTful APIs and MongoDB schemas managing player data, match results, and real-time updates while automating score tracking and match scheduling to reduce administrative overhead.</p>
+              <button class="button" onclick="window.open('https://github.com/gt-esports/gamefest', '_blank')">View Project</button>
+            </div>
+          </div>
+        </div>
+        <!-- Project 5: Tunetally -->
+        <div class="swiper-slide">
+          <div class="card">
+            <div class="image-content">
+              <div class="card-image">
+                <img src="images/project5.jpg" alt="">
+              </div>
+            </div>
+            <div class="card-content">
+              <h2 class="name">Spotify Wrapped</h2>
+              <div class="tech-stack">
+                <span class="tech-tag">Java</span>
+                <span class="tech-tag">Andriod Studio</span>
+                <span class="tech-tag">Firebase</span>
+                <span class="tech-tag">GPT-3.5</span>
+                <span class="tech-tag">Spotify API</span>
+              </div>
+              <p class="description">An Android application that takes music discovery to the next level by integrating Spotify API and GPT-3.5 to analyze listening habits and generate AI-powered personalized recommendations. Features a dynamic, illustration-style UI designed in Figma with seamless Spotify authorization and playlist generation.</p>
+              <button class="button" onclick="window.open('https://github.com/MeiL55/android_tunetally', '_blank')">View Project</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- GitHub Card -->
+        <div class="swiper-slide">
+          <div class="card">
+            <div class="image-content">
+              <div class="card-image">
+                <img src="images/gitpfp.jpg" alt="GitHub Profile">
+              </div>
+            </div>
+            <div class="card-content">
+              <h2 class="name">More Projects on GitHub</h2>
+              <div class="tech-stack">
+                <span class="tech-tag">Open Source</span>
+                <span class="tech-tag">Repositories</span>
+              </div>
+              <p class="description">Explore all my projects, contributions, and code repositories on my GitHub profile.</p>
+              <button class="button" onclick="window.open('https://github.com/MeiL55', '_blank')">Visit GitHub</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="card">
+            <div class="image-content">
+              <div class="card-image">
+                <img src="images/kitty1.jpg" alt="">
+              </div>
+            </div>
+            <div class="card-content">
+              <h2 class="name">MIMI</h2>
+              <div class="tech-stack">
+                <span class="tech-tag">Sausage management</span>
+                <span class="tech-tag">Photography</span>
+              </div>
+              <p class="description">My beloved cat</p>
+              <button class="button" onclick="window.location.href='cat.html';">Visit More</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="card">
+            <div class="image-content">
+              <div class="card-image">
+                <img src="images/foodpfp.jpg" alt="">
+              </div>
+            </div>
+            <div class="card-content">
+              <h2 class="name">FOOD</h2>
+              <div class="tech-stack">
+                <span class="tech-tag">Crack an egg with 1 hand</span>
+                <span class="tech-tag">Photography</span>
+                <span class="tech-tag">Spending money</span>
+              </div>
+              <p class="description">My work of art</p>
+              <button class="button" onclick="window.location.href='food.html';">Visit More</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
-
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-<!-- JavaScript -->
-<script src="script.js"></script>
-
 </html>

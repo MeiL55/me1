@@ -1,5 +1,5 @@
 /* Google Fonts - Poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 * {
   margin: 0;
@@ -7,240 +7,325 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+
 body {
-  min-height: 100vh; /* Ensures full height of the viewport */
-  display: flex;
-  flex-direction: column; /* Stacks components vertically */
-  align-items: center; /* Centers components horizontally */
-  justify-content: flex-start; /* Align components to the top */
-  background-color: #ffffff; /* Background color */
-  padding: 50px;
-  gap: 50px; /* Vertical spacing between child components */
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8eff5 100%);
+  padding-top: 80px;
 }
 
-/* Profile Section (pf) */
-.pf {
-  display: flex; /* Horizontal layout for image and scrollable text */
-  flex-direction: row; /* Ensures horizontal alignment */
-  align-items: center; /* Vertically centers image and scrollable text */
-  justify-content: center; /* Centers the content inside the container */
-  gap: 30px; /* Horizontal space between the image and text */
-  width: 80%; /* Responsive width for the container */
-  max-width: 1200px; /* Restricts the max size of the section */
-  margin-top: 80px;
-  margin-bottom: 20px; /* Space below the profile section */
-}
-
-/* Profile Image Styling */
-.pfp-img {
-  width: 400px; /* Image width */
-  height: 300px; /* Image height */
-  border-radius: 15px; /* Rounded corners for the image */
-  object-fit: cover; /* Ensures the image fits within the given dimensions */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for the image */
-}
-
-/* Scrollable Text Styling */
-.scrollable {
-  flex: 1; /* Takes available width */
-  height: 300px; /* Restricts the height */
-  width: 500px;
-  padding: 15px; /* Internal padding for the text */
-  overflow-y: scroll; /* Enables vertical scrolling */
-  border: 1px solid #f1ebe1; /* Border for the container */
-  background-color: #f1ebe1; /* Background color for the container */
-  border-radius: 10px; /* Rounded corners for the scrollable container */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-
-/* Customize the scrollbar for the scrollable section */
-.scrollable::-webkit-scrollbar {
-  width: 16px; /* Wider scrollbar for better usability */
-}
-
-.scrollable::-webkit-scrollbar-track {
-  background: #c0cfb2; /* Background of the scrollbar track */
-  border-radius: 10px;
-}
-
-.scrollable::-webkit-scrollbar-thumb {
-  background: #8ba888; /* Thumb (scroll handle) background color */
-  border-radius: 10px;
-}
-
-.scrollable::-webkit-scrollbar-thumb:hover {
-  background: #44624a; /* Thumb color on hover */
-}
-
+/* Top Navigation Bar */
 .top-bar {
-  position: fixed; /* Keeps the bar in place on scroll */
+  position: fixed;
   top: 0;
   left: 0;
-  height: 60px;
-  width: 100%; /* Spans the full width of the page */
-  background-color: #44624a; /* Light background color */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
-  z-index: 1000; /* Ensures the bar stays above all content */
-  padding: 10px 20px; /* Adds padding inside the bar */
+  width: 100%;
+  height: 70px;
+  background: linear-gradient(135deg, #44624a 0%, #5a7d63 100%);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
   display: flex;
-  justify-content: space-between; /* Distributes items with space between */
-  align-items: center; /* Aligns items vertically */
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #f1ebe1;
+  letter-spacing: 1px;
 }
 
 .top-bar .menu {
   display: flex;
-  gap: 20px; /* Space between menu items */
+  gap: 35px;
 }
-.top-bar .menu a:hover {
-  color: #c0cfb2; /* Highlight on hover */
-}
-.top-bar a {
+
+.top-bar .menu a {
   text-decoration: none;
-  color: #f1ebe1; /* Menu item text color */
-  font-weight: bold;
-  font-size: 20px;
+  color: #f1ebe1;
+  font-weight: 500;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  position: relative;
 }
-.slide-container {
-  display: flex;
-  margin-top: 0; /* Optional: Ensure no extra top margin is added */
-  max-width: 1400px;
+
+.top-bar .menu a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #c0cfb2;
+  transition: width 0.3s ease;
+}
+
+.top-bar .menu a:hover::after {
   width: 100%;
-  padding: 40px 0;
+}
+
+/* Profile Section */
+.profile-section {
+  max-width: 1200px;
+  margin: 40px auto 60px;
+  padding: 0 20px;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  background: white;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.profile-image {
+  flex-shrink: 0;
+}
+
+.profile-image img {
+  width: 350px;
+  height: 350px;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(68, 98, 74, 0.3);
+}
+
+.profile-content {
+  flex: 1;
+}
+
+.profile-content h1 {
+  font-size: 42px;
+  font-weight: 700;
+  color: #44624a;
+  margin-bottom: 10px;
+}
+
+.profile-content .subtitle {
+  font-size: 20px;
+  color: #8ba888;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+.profile-content p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* Section Title */
+.section-title {
+  text-align: center;
+  margin: 80px 0 50px;
+}
+
+.section-title h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #44624a;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #8ba888, #44624a);
+  border-radius: 2px;
+}
+
+/* Projects Section */
+.slide-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px 80px;
 }
 
 .slide-content {
-  margin: 0 40px;
-  overflow: hidden;
-  border-radius: 25px;
+  padding: 40px 0;
+  position: relative;
 }
 
 .card {
-  border-radius: 25px;
-  background-color: #f1ebe1;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  height: 100%;
 }
 
-.image-content,
-.card-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px 14px;
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(68, 98, 74, 0.2);
 }
 
 .image-content {
   position: relative;
-  row-gap: 5px;
-  padding: 25px 0;
+  padding: 30px;
+  background: linear-gradient(135deg, #8ba888 0%, #6a8a73 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 280px;
 }
 
-.overlay {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  background-color: #8ba888;
-  border-radius: 25px 25px 0 25px;
-}
-
-.overlay::before,
-.overlay::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  bottom: -40px;
-  height: 40px;
-  width: 40px;
-  background-color: #8ba888;
-}
-
-.overlay::after {
-  border-radius: 0 25px 0 0;
-  background-color: #f1ebe1;
+.project-icon {
+  font-size: 80px;
+  color: #f1ebe1;
+  opacity: 0.9;
 }
 
 .card-image {
-  position: relative;
-  height: 150px;
-  width: 150px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
-  background: #f1ebe1;
-  padding: 3px;
+  background: white;
+  padding: 5px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-.card-image .card-img {
-  height: 100%;
+.card-image img {
   width: 100%;
+  height: 100%;
   object-fit: cover;
   border-radius: 50%;
-  border: 4px solid #8ba888;
+  border: 5px solid #f1ebe1;
 }
 
-.name {
-  font-size: 18px;
-  font-weight: 500;
-  color: #333;
-}
-
-.description {
-  font-size: 14px;
-  color: #707070;
+.card-content {
+  padding: 30px;
   text-align: center;
 }
 
+.card-content .name {
+  font-size: 22px;
+  font-weight: 600;
+  color: #44624a;
+  margin-bottom: 15px;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+.tech-tag {
+  background: #e8f5e9;
+  color: #44624a;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.card-content .description {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  min-height: 60px;
+}
+
 .button {
+  background: linear-gradient(135deg, #8ba888 0%, #44624a 100%);
+  color: white;
   border: none;
-  font-size: 16px;
-  color: #FFF;
-  padding: 8px 16px;
-  background-color: #8ba888;
-  border-radius: 6px;
-  margin: 14px;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(68, 98, 74, 0.3);
 }
 
 .button:hover {
-  background: #44624a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(68, 98, 74, 0.4);
 }
 
-.swiper-navBtn {
-  color: #44624a;
-  transition: color 0.3s ease;
-}
-
-.swiper-navBtn:hover {
-  color: #44624a;
-}
-
-.swiper-navBtn::before,
-.swiper-navBtn::after {
-  font-size: 35px;
-}
-
-.swiper-button-next {
-  right: 0;
-}
-
+/* Swiper Navigation */
+.swiper-button-next,
 .swiper-button-prev {
-  left: 0;
+  color: #44624a;
+  background: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .swiper-pagination-bullet {
-  background-color: #c0cfb2;
+  width: 12px;
+  height: 12px;
+  background: #c0cfb2;
   opacity: 1;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #44624a;
+  background: #44624a;
+  width: 30px;
+  border-radius: 6px;
 }
 
-@media screen and (max-width: 768px) {
-  .slide-content {
-    margin: 0 10px;
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .profile-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 30px;
   }
 
-  .swiper-navBtn {
+  .profile-image img {
+    width: 280px;
+    height: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-bar {
+    padding: 0 20px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .top-bar .menu {
+    gap: 20px;
+  }
+
+  .profile-content h1 {
+    font-size: 32px;
+  }
+
+  .section-title h2 {
+    font-size: 28px;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
     display: none;
   }
 }

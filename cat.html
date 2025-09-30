@@ -4,46 +4,357 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CAT</title>
-    <link rel="stylesheet" href="food.css">
+    <title>Meet Mimi - My Beloved Cat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8eff5 100%);
+            padding-top: 80px;
+            padding-bottom: 60px;
+        }
+
+        /* Top Navigation Bar */
+        .top-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            background: linear-gradient(135deg, #44624a 0%, #5a7d63 100%);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 50px;
+        }
+
+        .back-btn {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #f1ebe1;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn img {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+            filter: brightness(0) invert(1);
+            border-radius: 4px;
+        }
+
+        .back-btn:hover {
+            color: #c0cfb2;
+        }
+
+        .top-bar .menu {
+            display: flex;
+            gap: 35px;
+        }
+
+        .top-bar .menu a {
+            text-decoration: none;
+            color: #f1ebe1;
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .top-bar .menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #c0cfb2;
+            transition: width 0.3s ease;
+        }
+
+        .top-bar .menu a:hover::after {
+            width: 100%;
+        }
+
+        /* Page Header */
+        .page-header {
+            text-align: center;
+            margin: 40px auto 50px;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .page-header h1 {
+            font-size: 42px;
+            font-weight: 700;
+            color: #44624a;
+            margin-bottom: 15px;
+        }
+
+        .page-header p {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .page-header .cat-emoji {
+            font-size: 60px;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Gallery Container */
+        .gallery-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .gallery {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .gallery:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(68, 98, 74, 0.2);
+        }
+
+        .gallery a {
+            display: block;
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 1;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery a:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery a::after {
+            content: '🔍';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            font-size: 48px;
+            background: rgba(68, 98, 74, 0.9);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+            opacity: 0;
+        }
+
+        .gallery a:hover::after {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        .description {
+            padding: 20px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 500;
+            color: #44624a;
+            background: linear-gradient(135deg, #f8faf9 0%, #f1f5f3 100%);
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Fun Stats Section */
+        .fun-stats {
+            max-width: 1000px;
+            margin: 60px auto 40px;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .fun-stats h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #44624a;
+            margin-bottom: 30px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-card .emoji {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .stat-card .label {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .stat-card .value {
+            font-size: 20px;
+            font-weight: 600;
+            color: #44624a;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .top-bar {
+                padding: 0 20px;
+            }
+
+            .page-header h1 {
+                font-size: 32px;
+            }
+
+            .page-header .cat-emoji {
+                font-size: 48px;
+            }
+
+            .gallery-container {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+            }
+
+            .fun-stats h2 {
+                font-size: 26px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Navigation Bar -->
     <div class="top-bar">
-        <a target="_blank" href="index.html">
-            <img src="images/back.jpg" alt="Logo" class="img">
+        <a href="index.html" class="back-btn">
+            <img src="images/back.jpg" alt="Back">
+            <span>Back to Home</span>
         </a>
         <div class="menu">
-            <a href="cv.html">Resume</a>
+            <a href="files/cv_master.pdf" target="_blank">Resume</a>
             <a href="contact.html">Contact</a>
         </div>
-      </div>
-<div class="gallery-container">
-    <div class="gallery">
-        <a target="_blank" href="images/cat1.jpg">
-            <img src="images/cat1.jpg" alt="">
-        </a>
-        <div class="description">On my newjeans</div>
     </div>
 
-    <div class="gallery">
-        <a target="_blank" href="images/cat2.jpg">
-            <img src="images/cat2.jpg" alt="">
-        </a>
-        <div class="description">Hugging my little black cat</div>
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="cat-emoji">🐱</div>
+        <h1>Meet Mimi</h1>
+        <p>My beloved cat and the perfect creation. Here's a glimpse into the adorable life of my furry companion!</p>
     </div>
 
-    <div class="gallery">
-        <a target="_blank" href="images/cat3.jpg">
-            <img src="images/cat3.jpg" alt="">
-        </a>
-        <div class="description">CATpybara</div>
+    <!-- Fun Stats -->
+    <div class="fun-stats">
+        <h2>Mimi's Stats</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="emoji">😴</div>
+                <div class="value">18 hrs/day</div>
+                <div class="label">Nap Time</div>
+            </div>
+            <div class="stat-card">
+                <div class="emoji">🌽</div>
+                <div class="value">100%</div>
+                <div class="label">Corn Sausage Lover</div>
+            </div>
+            <div class="stat-card">
+                <div class="emoji">❤️</div>
+                <div class="value">∞</div>
+                <div class="label">Cuteness Level</div>
+            </div>
+            <div class="stat-card">
+                <div class="emoji">🎾</div>
+                <div class="value">24/7</div>
+                <div class="label">Playful Mode</div>
+            </div>
+        </div>
     </div>
-    <div class="gallery">
-        <a target="_blank" href="images/cat4.jpg">
-            <img src="images/cat4.jpg" alt="">
-        </a>
-        <div class="description">Comfy on the sofa</div>
+
+    <!-- Gallery -->
+    <div class="gallery-container">
+        <div class="gallery">
+            <a target="_blank" href="images/cat1.jpg">
+                <img src="images/cat1.jpg" alt="Mimi on my NewJeans">
+            </a>
+            <div class="description">On my NewJeans 👖</div>
+        </div>
+
+        <div class="gallery">
+            <a target="_blank" href="images/cat2.jpg">
+                <img src="images/cat2.jpg" alt="Hugging my little black cat">
+            </a>
+            <div class="description">Hugging my little black cat 🖤</div>
+        </div>
+
+        <div class="gallery">
+            <a target="_blank" href="images/cat3.jpg">
+                <img src="images/cat3.jpg" alt="CATpybara">
+            </a>
+            <div class="description">CATpybara 🦫</div>
+        </div>
+
+        <div class="gallery">
+            <a target="_blank" href="images/cat4.jpg">
+                <img src="images/cat4.jpg" alt="Comfy on the sofa">
+            </a>
+            <div class="description">Comfy on the sofa 🛋️</div>
+        </div>
     </div>
-</div>
 </body>
 </html>
